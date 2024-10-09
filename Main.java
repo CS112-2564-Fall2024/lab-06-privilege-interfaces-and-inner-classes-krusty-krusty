@@ -73,6 +73,15 @@ public class Main
 					System.out.println(self);
 					break;
 				case 3:
+					for (int i = 0; i < people.length; i++) {
+						for (int j = 0; j < people.length - 1; j++) {
+							if (people[j].compareTo(people[j + 1]) > 0) {
+								Person temp = people[j];
+								people[j] = people[j + 1];
+								people[j + 1] = temp;
+							}
+						}
+					}
 					/***** TODO: (Part 1) implement a comparison case using the comparable method on the Person class to compare self to p1-p4*****/
 					//.out.println(p1 + " compare to " + p2 + p1.compareTo(p2));
 					 //System.out.println(p1 + " compare to " + p3 + p1.compareTo(p3));
@@ -124,8 +133,9 @@ public class Main
 		System.out.println("Tell us about yourself: ");
 		story = keyboard.nextLine();
 		
+		
 		person.setName(name);
-		person.setStory(story);
+		person.setIdentity(Identity);
 	}
 
 	public static int doPrivilegeQuestionnaire() {
